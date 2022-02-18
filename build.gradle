@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+    implementation 'org.springframework:spring-webmvc:6.0.0-SNAPSHOT'
+    implementation 'org.springframework:spring-context-support:6.0.0-SNAPSHOT'
+    implementation 'org.freemarker:freemarker:2.3.31'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:5.0.0'
+    implementation 'ch.qos.logback:logback-classic:1.2.10'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
